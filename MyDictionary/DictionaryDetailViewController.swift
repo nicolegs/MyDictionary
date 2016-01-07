@@ -20,6 +20,13 @@ class DictionaryDetailViewController: UIViewController, UITableViewDataSource, U
         //title do Navigation Controller.
         title = dictionary.word
         
+        //line separators
+        tableView.tableFooterView = UIView(frame: CGRectZero)
+        
+        //Self sizing
+        tableView.estimatedRowHeight = 36.0
+        tableView.rowHeight = UITableViewAutomaticDimension
+        
     }
     
     override func didReceiveMemoryWarning() {

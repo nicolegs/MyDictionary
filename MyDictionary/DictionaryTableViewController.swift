@@ -15,7 +15,6 @@ class DictionaryTableViewController: UITableViewController, NSFetchedResultsCont
     var searchController:UISearchController!
     var searchResults:[Dictionary] = []
     
-    
     private var dictionaryItems:[Dictionary] = []
     
     private var cockpitDict = [String: [Dictionary]]()
@@ -38,12 +37,10 @@ class DictionaryTableViewController: UITableViewController, NSFetchedResultsCont
             }
         }
         
-        
         searchController = UISearchController(searchResultsController: nil)
         tableView.tableHeaderView = searchController.searchBar
         searchController.searchResultsUpdater = self
         searchController.dimsBackgroundDuringPresentation = false
-        
         searchController.searchBar.placeholder = "Search ..."
         
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style:
@@ -52,17 +49,17 @@ class DictionaryTableViewController: UITableViewController, NSFetchedResultsCont
         // Enable self sizing cells
         tableView.estimatedRowHeight = 30.0
         tableView.rowHeight = UITableViewAutomaticDimension
+  
         
-        createCorkpitDict()
+        createCockpitDict()
     }
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    func createCorkpitDict() {
+    func createCockpitDict(){
         
         for item in dictionaryItems {
             
@@ -117,6 +114,7 @@ class DictionaryTableViewController: UITableViewController, NSFetchedResultsCont
         
         let dictionary = (searchController.active) ? searchResults[indexPath.row]: dictionaryItems[indexPath.row]
         
+    
         // Configure the cell...
         let wordKey = sectionTitles[indexPath.section]
         if let items = cockpitDict[wordKey] {
@@ -143,27 +141,7 @@ class DictionaryTableViewController: UITableViewController, NSFetchedResultsCont
         }
     }
     
-    
-    // MARK: - Navigation
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    
-    
-    
-    
-    // Mr Peyman tip:
-    //    override func sectionIndexTitlesForTableView(tableView: UITableView) -> [String]? {
-    //    return ["A", "C", "B"]
-    //    }
-    // Mr Peyman tip:
-    //    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-    //        return "SECTION \(section+1)"
-    //    }
-    
-    
-    
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showDictionaryDetail" {
             if let indexPath = tableView.indexPathForSelectedRow {
                 let destinationController = segue.destinationViewController as! DictionaryDetailViewController
