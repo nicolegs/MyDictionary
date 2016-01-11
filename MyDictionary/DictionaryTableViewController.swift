@@ -82,6 +82,21 @@ class DictionaryTableViewController: UITableViewController, NSFetchedResultsCont
         sectionTitles = sectionTitles.sort({ $0 < $1 })
     }
     
+//    create a standard way to get a Dictionary from a index path
+    func itemForIndexPath (indexPath: NSIndexPath) -> Dictionary? {
+        var result: Dictionary? = nil
+        
+        if searchController.active {
+            result = searchResults[indexPath.row]
+        }else{
+            let wordKey = sectionTitles[indexPath.section]
+            if let items = cockpitDict[wordKey]{
+                result = items[indexPath.row]
+            }
+        }
+        return result
+    }
+    
     // MARK: - Table view data source
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -89,7 +104,8 @@ class DictionaryTableViewController: UITableViewController, NSFetchedResultsCont
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return sectionTitles.count
+        //assume a single section after a search
+        return (searchController.active) ? 1 : sectionTitles.count
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -112,19 +128,14 @@ class DictionaryTableViewController: UITableViewController, NSFetchedResultsCont
         
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! DictionaryTableViewCell
         
-        let dictionary = (searchController.active) ? searchResults[indexPath.row]: dictionaryItems[indexPath.row]
-        
-    
-        // Configure the cell...
-        let wordKey = sectionTitles[indexPath.section]
-        if let items = cockpitDict[wordKey] {
-            cell.wordLabel.text = items[indexPath.row].word
-            cell.definitionSmallLabel.text = items[indexPath.row].definition
+        //let dictionary = (searchController.active) ? searchResults[indexPath.row]: dictionaryItems[indexPath.row]
+        if let dictionary = itemForIndexPath(indexPath){
+            cell.wordLabel.text = dictionary.word
+            cell.definitionSmallLabel.text =  dictionary.definition
+        }else{
+            print("Cell error with path\(indexPath)")
         }
-        
-        
-        //        cell.definitionSmallLabel.text = dictionary.definition
-        return cell
+            return cell
     }
     
     override func sectionIndexTitlesForTableView(tableView: UITableView) -> [String]? {
@@ -145,14 +156,17 @@ class DictionaryTableViewController: UITableViewController, NSFetchedResultsCont
         if segue.identifier == "showDictionaryDetail" {
             if let indexPath = tableView.indexPathForSelectedRow {
                 let destinationController = segue.destinationViewController as! DictionaryDetailViewController
-                destinationController.dictionary = (searchController.active) ? searchResults[indexPath.row] : dictionaryItems[indexPath.row]
+                if let dictionary = itemForIndexPath(indexPath){
+                    destinationController.dictionary = dictionary
+                }else{
+                    print("Segue error with path \(indexPath)")
+                }
                 searchController.active = false
             }
         }
     }
     
-    func updateSearchResultsForSearchController(searchController:
-        UISearchController) {
+    func updateSearchResultsForSearchController(searchController: UISearchController) {
             if let searchText = searchController.searchBar.text {
                 filterContentForSearchText(searchText)
                 tableView.reloadData()
