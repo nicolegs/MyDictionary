@@ -18,15 +18,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
         
-        let srcURL = NSBundle.mainBundle().URLForResource("CarPartBig1", withExtension: "csv")!
-        let documentsPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0]
-        var toURL = NSURL(string: "file://\(documentsPath)")!
-        toURL = toURL.URLByAppendingPathComponent(srcURL.lastPathComponent!)
-        do {
-            try NSFileManager().copyItemAtURL(srcURL, toURL: toURL)
-        } catch let error as NSError {
-            print(error.localizedDescription)
-        }
+        
+        
+        
+// Allen-CODE--------------------------------------------------------------
+//        let srcURL = NSBundle.mainBundle().URLForResource("CarPartBig1", withExtension: "csv")!
+//        let documentsPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0]
+//        var toURL = NSURL(string: "file://\(documentsPath)")!
+//        toURL = toURL.URLByAppendingPathComponent(srcURL.lastPathComponent!)
+//        do {
+//            try NSFileManager().copyItemAtURL(srcURL, toURL: toURL)
+//        } catch let error as NSError {
+//            print(error.localizedDescription)
+//        }
+// Allen-CODE--------------------------------------------------------------
+        
+        
+        
+        
         
         //tentativa de não carregar o file se já tiver no iphone. START
         let fetchRequest: NSFetchRequest = NSFetchRequest(entityName: "DictionaryEntity")
@@ -213,17 +222,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func preloadData () {
-        
-        // Load the data file. For any reasons it can't be loaded, we just return
-        //        guard let remoteURL = NSURL(string: "https://googledrive.com/host/0B4xB0m95siM2c042MWJfY0o5LTg/CarPartBig1.csv") else {
-        //            return
+ 
         
         
-        func preloadData(toURL: NSURL) {
-            
-            let remoteURL = toURL
-            
+        
+        
+        
+        
+// Allen--------------Remove this-------------------------------------------------
+                guard let remoteURL = NSURL(string: "https://googledrive.com/host/0B4xB0m95siM2c042MWJfY0o5LTg/CarPartBig1.csv") else {
+                    return}
+// Allen--------------Until here-------------------------------------------------
+        
+       
+        
+        
+        
+// Allen-CODE--------------------------------------------------------------
+//        func preloadData(toURL: NSURL) {
+//            let remoteURL = toURL
+// Allen-CODE--------------------------------------------------------------
 
+        
+        
+        
+        
+        
+        
             let fetchRequest: NSFetchRequest = NSFetchRequest(entityName: "DictionaryEntity")
             fetchRequest.fetchLimit = 1
             do {
@@ -241,9 +266,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 // Handle error
             }
             //tentativa de não remover o file se já tiver no iphone. END
-            
-            
             // Remove all the menu items before preloading
+        
             removeData()
             
             if let items = parseCSV( remoteURL, encoding: NSUTF8StringEncoding) {
@@ -279,4 +303,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
     }
-}
+
+// Allen-CODE--------------------------------------------------------------
+// }
+// Allen-CODE--------------------------------------------------------------
