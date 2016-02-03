@@ -19,6 +19,7 @@
 		7879DCBC1C3BE28000179C48 /* DictionaryDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7879DCBB1C3BE28000179C48 /* DictionaryDetailTableViewCell.swift */; };
 		7879DCBE1C3BE32A00179C48 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7879DCBD1C3BE32A00179C48 /* Dictionary.swift */; };
 		7879DCC11C3BE41E00179C48 /* CockpitDictionary.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7879DCBF1C3BE41E00179C48 /* CockpitDictionary.xcdatamodeld */; };
+		78C06E821C62791700A0B0A1 /* CarPartBig1.csv in Resources */ = {isa = PBXBuildFile; fileRef = 78C06E811C62791700A0B0A1 /* CarPartBig1.csv */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		7879DCBB1C3BE28000179C48 /* DictionaryDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryDetailTableViewCell.swift; sourceTree = "<group>"; };
 		7879DCBD1C3BE32A00179C48 /* Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
 		7879DCC01C3BE41E00179C48 /* CockpitDictionary.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CockpitDictionary.xcdatamodel; sourceTree = "<group>"; };
+		78C06E811C62791700A0B0A1 /* CarPartBig1.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CarPartBig1.csv; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 		7879DC831C3BC9B800179C48 /* MyDictionary */ = {
 			isa = PBXGroup;
 			children = (
+				78C06E811C62791700A0B0A1 /* CarPartBig1.csv */,
 				7879DC841C3BC9B800179C48 /* AppDelegate.swift */,
 				7879DCB51C3BE11400179C48 /* DictionaryTableViewController.swift */,
 				7879DCB71C3BE1A300179C48 /* DictionaryTableViewCell.swift */,
@@ -248,6 +251,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7879DC921C3BC9B800179C48 /* LaunchScreen.storyboard in Resources */,
+				78C06E821C62791700A0B0A1 /* CarPartBig1.csv in Resources */,
 				7879DC8F1C3BC9B800179C48 /* Assets.xcassets in Resources */,
 				7879DC8A1C3BC9B800179C48 /* Main.storyboard in Resources */,
 			);
@@ -507,6 +511,7 @@
 				7879DCAE1C3BC9B800179C48 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7879DCAF1C3BC9B800179C48 /* Build configuration list for PBXNativeTarget "MyDictionaryTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +520,7 @@
 				7879DCB11C3BC9B800179C48 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7879DCB21C3BC9B800179C48 /* Build configuration list for PBXNativeTarget "MyDictionaryUITests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +529,7 @@
 				7879DCB41C3BC9B800179C48 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

@@ -17,6 +17,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
+        
+        let srcURL = NSBundle.mainBundle().URLForResource("CarPartBig1", withExtension: "csv")!
+        let documentsPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0]
+        var toURL = NSURL(string: "file://\(documentsPath)")!
+        toURL = toURL.URLByAppendingPathComponent(srcURL.lastPathComponent!)
+        do {
+            try NSFileManager().copyItemAtURL(srcURL, toURL: toURL)
+        } catch let error as NSError {
+            print(error.localizedDescription)
+        }
+        
+        //tentativa de não carregar o file se já tiver no iphone. START
         let fetchRequest: NSFetchRequest = NSFetchRequest(entityName: "DictionaryEntity")
         fetchRequest.fetchLimit = 1
         do {
@@ -30,21 +42,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("Error: \(error.domain)")
             // Handle error
         }
-        
-        //        change color of Navigation Bar
+      
         UINavigationBar.appearance().barTintColor = UIColor(red: 210.0/255.0, green:
             178.0/255.0, blue: 255.0/255.0, alpha: 1.0)
         UINavigationBar.appearance().tintColor = UIColor.whiteColor()
+
         
+        //cor, tamanho e letra que vai na Navigation bar
         if let barFont = UIFont(name: "Avenir-Light", size: 24.0) {
             UINavigationBar.appearance().titleTextAttributes =
-                [NSForegroundColorAttributeName:UIColor.whiteColor(),
+                [NSForegroundColorAttributeName:UIColor.blackColor(),
                     NSFontAttributeName:barFont]
         }
         
         UIApplication.sharedApplication().statusBarStyle = .LightContent
         
-        // Override point for customization after application launch.
+ 
         return true
     }
     
@@ -126,6 +139,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             do {
                 try managedObjectContext.save()
             } catch {
+                // Replace this implementation with code to handle the error appropriately.
+                // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
                 let nserror = error as NSError
                 NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
                 abort()
@@ -166,8 +181,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                 textScanner.scanUpToString(delimiter, intoString: &value)
                             }
                             
+                            // Store the value into the values array
                             values.append(value as! String)
                             
+                            // Retrieve the unscanned remainder of the string
                             if textScanner.scanLocation < textScanner.string.characters.count {
                                 textToScan = (textScanner.string as NSString).substringFromIndex(textScanner.scanLocation + 1)
                             } else {
@@ -198,65 +215,68 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func preloadData () {
         
         // Load the data file. For any reasons it can't be loaded, we just return
+        //        guard let remoteURL = NSURL(string: "https://googledrive.com/host/0B4xB0m95siM2c042MWJfY0o5LTg/CarPartBig1.csv") else {
+        //            return
         
         
-        
-        guard let remoteURL = NSURL(string: "https://googledrive.com/host/0B4xB0m95siM2c042MWJfY0o5LTg/CarParts1.csv") else {
-            return
+        func preloadData(toURL: NSURL) {
             
-        }
-        
-        let fetchRequest: NSFetchRequest = NSFetchRequest(entityName: "DictionaryEntity")
-        fetchRequest.fetchLimit = 1
-        do {
-            let result = try managedObjectContext.executeFetchRequest(fetchRequest)
+            let remoteURL = toURL
             
-            // I assume this code only gets executed if there is no error
-            if result.count == 0 {
-                
-                removeData()
-                
-                // You know you do not have any items, so download
-            }
-        } catch let error as NSError {
-            print("Error: \(error.domain)")
-            // Handle error
-        }
-        
-        // Remove all the menu items before preloading
-        removeData()
-        
-        if let items = parseCSV(remoteURL, encoding: NSUTF8StringEncoding) {
-            // Preload the menu items
-            for item in items {
-                let dictionaryItem = NSEntityDescription.insertNewObjectForEntityForName("DictionaryEntity", inManagedObjectContext: managedObjectContext) as! Dictionary
-                dictionaryItem.word = item.word
-                dictionaryItem.definition = item.definition
-                
-                do {
-                    try managedObjectContext.save()
-                } catch {
-                    print(error)
-                }
-            }
-            
-        }
-    }
-    
-    func removeData () {
-        // Remove the existing items
-        let fetchRequest = NSFetchRequest(entityName: "DictionaryEntity")
-        
-        do {
-            let dictionaryItems = try managedObjectContext.executeFetchRequest(fetchRequest) as! [Dictionary]
-            for dictionaryItem in dictionaryItems {
-                managedObjectContext.deleteObject(dictionaryItem)
-            }
-        } catch {
-            print(error)
-        }
-        
-    }
-    
-}
 
+            let fetchRequest: NSFetchRequest = NSFetchRequest(entityName: "DictionaryEntity")
+            fetchRequest.fetchLimit = 1
+            do {
+                let result = try managedObjectContext.executeFetchRequest(fetchRequest)
+                
+                // I assume this code only gets executed if there is no error
+                if result.count == 0 {
+                    
+                    removeData()
+                    
+                    // You know you do not have any items, so download
+                }
+            } catch let error as NSError {
+                print("Error: \(error.domain)")
+                // Handle error
+            }
+            //tentativa de não remover o file se já tiver no iphone. END
+            
+            
+            // Remove all the menu items before preloading
+            removeData()
+            
+            if let items = parseCSV( remoteURL, encoding: NSUTF8StringEncoding) {
+                // Preload the menu items
+                for item in items {
+                    let dictionaryItem = NSEntityDescription.insertNewObjectForEntityForName("DictionaryEntity", inManagedObjectContext: managedObjectContext) as! Dictionary
+                    dictionaryItem.word = item.word
+                    dictionaryItem.definition = item.definition
+                    
+                    do {
+                        try managedObjectContext.save()
+                    } catch {
+                        print(error)
+                    }
+                }
+                
+            }
+        }
+        
+        func removeData () {
+            // Remove the existing items
+            let fetchRequest = NSFetchRequest(entityName: "DictionaryEntity")
+            
+            do {
+                let dictionaryItems = try managedObjectContext.executeFetchRequest(fetchRequest) as! [Dictionary]
+                for dictionaryItem in dictionaryItems {
+                    managedObjectContext.deleteObject(dictionaryItem)
+                }
+            } catch {
+                print(error)
+            }
+            
+        }
+        
+    }
+}
