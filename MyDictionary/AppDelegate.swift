@@ -259,14 +259,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     let dictionaryItem = NSEntityDescription.insertNewObjectForEntityForName("DictionaryEntity", inManagedObjectContext: managedObjectContext) as! Dictionary
                     dictionaryItem.word = item.word
                     dictionaryItem.definition = item.definition
-                    
-                    do {
-                        try managedObjectContext.save()
-                    } catch {
-                        print(error)
-                    }
                 }
                 
+                do {
+                    try managedObjectContext.save()
+                } catch {
+                    print(error)
+                }
             }
         }
         
