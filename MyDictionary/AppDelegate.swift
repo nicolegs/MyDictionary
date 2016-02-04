@@ -22,15 +22,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
 // Allen-CODE--------------------------------------------------------------
-//        let srcURL = NSBundle.mainBundle().URLForResource("CarPartBig1", withExtension: "csv")!
-//        let documentsPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0]
-//        var toURL = NSURL(string: "file://\(documentsPath)")!
-//        toURL = toURL.URLByAppendingPathComponent(srcURL.lastPathComponent!)
-//        do {
-//            try NSFileManager().copyItemAtURL(srcURL, toURL: toURL)
-//        } catch let error as NSError {
-//            print(error.localizedDescription)
-//        }
+        let srcURL = NSBundle.mainBundle().URLForResource("CarPartBig1", withExtension: "csv")!
+        let documentsPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0]
+        var toURL = NSURL(string: "file://\(documentsPath)")!
+        toURL = toURL.URLByAppendingPathComponent(srcURL.lastPathComponent!)
+        do {
+            try NSFileManager().copyItemAtURL(srcURL, toURL: toURL)
+        } catch let error as NSError {
+            print(error.localizedDescription)
+        }
 // Allen-CODE--------------------------------------------------------------
         
         
@@ -44,7 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let result = try managedObjectContext.executeFetchRequest(fetchRequest)
             // I assume this code only gets executed if there is no error
             if result.count == 0 {
-                preloadData()
+                preloadData(toURL)
                 // You know you do not have any items, so download
             }
         } catch let error as NSError {
@@ -221,33 +221,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return items
     }
     
-    func preloadData () {
- 
-        
-        
-        
-        
-        
-        
+    func preloadData (toURL: NSURL) {
 // Allen--------------Remove this-------------------------------------------------
-                guard let remoteURL = NSURL(string: "https://googledrive.com/host/0B4xB0m95siM2c042MWJfY0o5LTg/CarPartBig1.csv") else {
-                    return}
+//                guard let remoteURL = NSURL(string: "https://googledrive.com/host/0B4xB0m95siM2c042MWJfY0o5LTg/CarPartBig1.csv") else {
+//                    return}
 // Allen--------------Until here-------------------------------------------------
-        
-       
-        
-        
         
 // Allen-CODE--------------------------------------------------------------
 //        func preloadData(toURL: NSURL) {
-//            let remoteURL = toURL
+            let remoteURL = toURL
 // Allen-CODE--------------------------------------------------------------
-
-        
-        
-        
-        
-        
         
             let fetchRequest: NSFetchRequest = NSFetchRequest(entityName: "DictionaryEntity")
             fetchRequest.fetchLimit = 1
@@ -276,14 +259,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     let dictionaryItem = NSEntityDescription.insertNewObjectForEntityForName("DictionaryEntity", inManagedObjectContext: managedObjectContext) as! Dictionary
                     dictionaryItem.word = item.word
                     dictionaryItem.definition = item.definition
-                    
-                    do {
-                        try managedObjectContext.save()
-                    } catch {
-                        print(error)
-                    }
                 }
                 
+                do {
+                    try managedObjectContext.save()
+                } catch {
+                    print(error)
+                }
             }
         }
         
