@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="YZk-uD-3DK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="YZk-uD-3DK">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Cockpit Dictionary-->
+        <!--Car Part-->
         <scene sceneID="LKx-5F-ECk">
             <objects>
                 <tableViewController id="OoE-0J-RWU" customClass="DictionaryTableViewController" customModule="MyDictionary" customModuleProvider="target" sceneMemberID="viewController">
@@ -60,7 +60,7 @@
                             <outlet property="delegate" destination="OoE-0J-RWU" id="RVg-zl-lUJ"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Cockpit Dictionary" id="84w-OF-U0s"/>
+                    <navigationItem key="navigationItem" title="Car Part" id="84w-OF-U0s"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Zs-PG-cmb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -89,8 +89,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="definition" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zr5-rn-uCY">
-                                                    <rect key="frame" x="0.0" y="0.0" width="559" height="27"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="definition" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zr5-rn-uCY">
+                                                    <rect key="frame" x="3" y="11" width="597" height="27"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -98,10 +98,10 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="zr5-rn-uCY" secondAttribute="trailing" constant="33" id="2uO-Tx-nXY"/>
-                                                <constraint firstItem="zr5-rn-uCY" firstAttribute="top" secondItem="ecd-yy-Tma" secondAttribute="top" id="Eq9-57-diB"/>
-                                                <constraint firstItem="zr5-rn-uCY" firstAttribute="leading" secondItem="ecd-yy-Tma" secondAttribute="leading" id="LyO-aA-NGS"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="zr5-rn-uCY" secondAttribute="bottom" constant="8" id="twR-nT-spj"/>
+                                                <constraint firstItem="zr5-rn-uCY" firstAttribute="top" secondItem="ecd-yy-Tma" secondAttribute="topMargin" constant="3" id="Fp7-YN-cq6"/>
+                                                <constraint firstItem="zr5-rn-uCY" firstAttribute="leading" secondItem="ecd-yy-Tma" secondAttribute="leadingMargin" constant="-5" id="Nku-zA-QVB"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="zr5-rn-uCY" secondAttribute="bottom" constant="-3" id="PPb-5n-xAj"/>
+                                                <constraint firstAttribute="trailing" secondItem="zr5-rn-uCY" secondAttribute="trailing" id="PYb-Qg-Vsy"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>

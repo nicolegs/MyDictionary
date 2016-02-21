@@ -18,9 +18,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
         
-//      Nicole
+//path do file
+        print(applicationDocumentsDirectory.path)
         
-        
+//pega o csv e transforma em sqlite
 // Allen-CODE--------------------------------------------------------------
         let srcURL = NSBundle.mainBundle().URLForResource("CarPartBig1", withExtension: "csv")!
         let documentsPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0]
@@ -34,9 +35,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 // Allen-CODE--------------------------------------------------------------
         
         
-        
-        
-        
         //tentativa de não carregar o file se já tiver no iphone. START
         let fetchRequest: NSFetchRequest = NSFetchRequest(entityName: "DictionaryEntity")
         fetchRequest.fetchLimit = 1
@@ -48,7 +46,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //                change by Allen
                 preloadData(toURL)
                 
-                // You know you do not have any items, so download
+// You know you do not have any items, so download
             }
         } catch let error as NSError {
             print("Error: \(error.domain)")
@@ -58,7 +56,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().barTintColor = UIColor(red: 210.0/255.0, green:
             178.0/255.0, blue: 255.0/255.0, alpha: 1.0)
         UINavigationBar.appearance().tintColor = UIColor.whiteColor()
-
         
         //cor, tamanho e letra que vai na Navigation bar
         if let barFont = UIFont(name: "Avenir-Light", size: 24.0) {
@@ -226,33 +223,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func preloadData (toURL: NSURL) {
  
-        
-        
-        
-        
-        
-        
-// Allen--------------Remove this-------------------------------------------------
-//                guard let remoteURL = NSURL(string: "https://googledrive.com/host/0B4xB0m95siM2c042MWJfY0o5LTg/CarPartBig1.csv") else {
-//                    return}
-// Allen--------------Until here-------------------------------------------------
-        
-       
-        
-        
-        
-// Allen-CODE--------------------------------------------------------------
-//        func preloadData(toURL: NSURL) {
-            let remoteURL = toURL
-// Allen-CODE--------------------------------------------------------------
-
-        
-        
-        
-        
-        
-        
-            let fetchRequest: NSFetchRequest = NSFetchRequest(entityName: "DictionaryEntity")
+         let remoteURL = toURL
+         let fetchRequest: NSFetchRequest = NSFetchRequest(entityName: "DictionaryEntity")
             fetchRequest.fetchLimit = 1
         do {
                 let result = try managedObjectContext.executeFetchRequest(fetchRequest)
@@ -306,7 +278,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
     }
-
-// Allen-CODE--------------------------------------------------------------
-// }
-// Allen-CODE--------------------------------------------------------------
