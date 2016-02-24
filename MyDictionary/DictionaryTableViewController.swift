@@ -47,7 +47,7 @@ class DictionaryTableViewController: UITableViewController, NSFetchedResultsCont
             .Plain, target: nil, action: nil)
         
         // Enable self sizing cells
-        tableView.estimatedRowHeight = 30.0
+        tableView.estimatedRowHeight = 100.0
         tableView.rowHeight = UITableViewAutomaticDimension
   
         

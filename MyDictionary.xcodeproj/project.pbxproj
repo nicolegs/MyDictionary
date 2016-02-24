@@ -19,10 +19,7 @@
 		7879DCBC1C3BE28000179C48 /* DictionaryDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7879DCBB1C3BE28000179C48 /* DictionaryDetailTableViewCell.swift */; };
 		7879DCBE1C3BE32A00179C48 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7879DCBD1C3BE32A00179C48 /* Dictionary.swift */; };
 		7879DCC11C3BE41E00179C48 /* CockpitDictionary.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7879DCBF1C3BE41E00179C48 /* CockpitDictionary.xcdatamodeld */; };
-		78C06E821C62791700A0B0A1 /* CarPartBig1.csv in Resources */ = {isa = PBXBuildFile; fileRef = 78C06E811C62791700A0B0A1 /* CarPartBig1.csv */; };
-		93AF4D111C79A4F20096351C /* CockpitDictionary.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 93AF4D0E1C79A4F20096351C /* CockpitDictionary.sqlite */; };
-		93AF4D121C79A4F20096351C /* CockpitDictionary.sqlite-shm in Resources */ = {isa = PBXBuildFile; fileRef = 93AF4D0F1C79A4F20096351C /* CockpitDictionary.sqlite-shm */; };
-		93AF4D131C79A4F20096351C /* CockpitDictionary.sqlite-wal in Resources */ = {isa = PBXBuildFile; fileRef = 93AF4D101C79A4F20096351C /* CockpitDictionary.sqlite-wal */; };
+		9375AEAB1C7C8A320092E061 /* CarPart5column.csv in Resources */ = {isa = PBXBuildFile; fileRef = 9375AEAA1C7C8A320092E061 /* CarPart5column.csv */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,10 +58,7 @@
 		7879DCBB1C3BE28000179C48 /* DictionaryDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryDetailTableViewCell.swift; sourceTree = "<group>"; };
 		7879DCBD1C3BE32A00179C48 /* Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
 		7879DCC01C3BE41E00179C48 /* CockpitDictionary.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CockpitDictionary.xcdatamodel; sourceTree = "<group>"; };
-		78C06E811C62791700A0B0A1 /* CarPartBig1.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CarPartBig1.csv; sourceTree = "<group>"; };
-		93AF4D0E1C79A4F20096351C /* CockpitDictionary.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = CockpitDictionary.sqlite; sourceTree = "<group>"; };
-		93AF4D0F1C79A4F20096351C /* CockpitDictionary.sqlite-shm */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CockpitDictionary.sqlite-shm"; sourceTree = "<group>"; };
-		93AF4D101C79A4F20096351C /* CockpitDictionary.sqlite-wal */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CockpitDictionary.sqlite-wal"; sourceTree = "<group>"; };
+		9375AEAA1C7C8A320092E061 /* CarPart5column.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CarPart5column.csv; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,11 +119,8 @@
 				7879DC8E1C3BC9B800179C48 /* Assets.xcassets */,
 				7879DC901C3BC9B800179C48 /* LaunchScreen.storyboard */,
 				7879DC931C3BC9B800179C48 /* Info.plist */,
+				9375AEAA1C7C8A320092E061 /* CarPart5column.csv */,
 				7879DCBF1C3BE41E00179C48 /* CockpitDictionary.xcdatamodeld */,
-				78C06E811C62791700A0B0A1 /* CarPartBig1.csv */,
-				93AF4D0E1C79A4F20096351C /* CockpitDictionary.sqlite */,
-				93AF4D0F1C79A4F20096351C /* CockpitDictionary.sqlite-shm */,
-				93AF4D101C79A4F20096351C /* CockpitDictionary.sqlite-wal */,
 			);
 			path = MyDictionary;
 			sourceTree = "<group>";
@@ -259,13 +250,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9375AEAB1C7C8A320092E061 /* CarPart5column.csv in Resources */,
 				7879DC921C3BC9B800179C48 /* LaunchScreen.storyboard in Resources */,
-				78C06E821C62791700A0B0A1 /* CarPartBig1.csv in Resources */,
-				93AF4D121C79A4F20096351C /* CockpitDictionary.sqlite-shm in Resources */,
-				93AF4D111C79A4F20096351C /* CockpitDictionary.sqlite in Resources */,
 				7879DC8F1C3BC9B800179C48 /* Assets.xcassets in Resources */,
 				7879DC8A1C3BC9B800179C48 /* Main.storyboard in Resources */,
-				93AF4D131C79A4F20096351C /* CockpitDictionary.sqlite-wal in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

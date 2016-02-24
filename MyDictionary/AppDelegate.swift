@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
 //pega o csv e transforma em sqlite
 // Allen-CODE--------------------------------------------------------------
-        let srcURL = NSBundle.mainBundle().URLForResource("CarPartBig1", withExtension: "csv")!
+        let srcURL = NSBundle.mainBundle().URLForResource("CarPart5column", withExtension: "csv")!
         let documentsPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0]
         var toURL = NSURL(string: "file://\(documentsPath)")!
         toURL = toURL.URLByAppendingPathComponent(srcURL.lastPathComponent!)
@@ -159,11 +159,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     // MARK: - CSV Parser Methods
     
-    func parseCSV (contentsOfURL: NSURL, encoding: NSStringEncoding) -> [(word:String, definition:String)]? {
+    func parseCSV (contentsOfURL: NSURL, encoding: NSStringEncoding) -> [(word:String, definition:String, type:String, year:String, country:String)]? {
         
         // Load the CSV file and parse it
         let delimiter = ","
-        var items:[(word:String, definition:String)]?
+        var items:[(word:String, definition:String, type:String, year:String, country:String)]?
         
         do {
             let content = try String(contentsOfURL: contentsOfURL, encoding: encoding)
@@ -209,7 +209,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     }
                     
                     // Put the values into the tuple and add it to the items array
-                    let item = (word: values[0], definition: values[1])
+                    let item = (word: values[0], definition: values[1] , type: values[2], year: values[3], country: values[4])
                     items?.append(item)
                 }
             }
@@ -251,7 +251,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     let dictionaryItem = NSEntityDescription.insertNewObjectForEntityForName("DictionaryEntity", inManagedObjectContext: managedObjectContext) as! Dictionary
                     dictionaryItem.word = item.word
                     dictionaryItem.definition = item.definition
-                    
+                    dictionaryItem.type = item.type
+                    dictionaryItem.year = item.year
+                    dictionaryItem.country = item.country
+  
                     do {
                         try managedObjectContext.save()
                     } catch {

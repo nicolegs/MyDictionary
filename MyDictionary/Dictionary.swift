@@ -12,5 +12,8 @@ import CoreData
 class Dictionary: NSManagedObject {
     @NSManaged var word:String?
     @NSManaged var definition:String?
+    @NSManaged var type:String?
+    @NSManaged var year:String?
+    @NSManaged var country:String?
     
 }
