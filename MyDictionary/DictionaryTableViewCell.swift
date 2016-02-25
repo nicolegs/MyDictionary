@@ -12,8 +12,14 @@ class DictionaryTableViewCell: UITableViewCell {
     
     @IBOutlet var wordLabel: UILabel!
     
-    
     @IBOutlet var definitionSmallLabel: UILabel!
+    
+    @IBOutlet weak var typeLabel: UILabel!
+    
+    @IBOutlet weak var yearLabel: UILabel!
+    
+    @IBOutlet weak var countryLabel: UILabel!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()

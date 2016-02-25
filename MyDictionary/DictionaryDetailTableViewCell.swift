@@ -12,7 +12,7 @@ class DictionaryDetailTableViewCell: UITableViewCell {
     
     
     //@IBOutlet var definition: UILabel!
-    @IBOutlet var definition: UILabel!
+    @IBOutlet var typeLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

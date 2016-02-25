@@ -44,9 +44,9 @@ class DictionaryDetailViewController: UIViewController, UITableViewDataSource, U
         // Configure the cell...
         switch indexPath.row {
         case 0:
-            cell.definition.text = dictionary.definition
+            cell.typeLabel.text = dictionary.type
         default:
-            cell.definition.text = ""
+            cell.typeLabel.text = ""
         }
         
         cell.backgroundColor = UIColor.clearColor()

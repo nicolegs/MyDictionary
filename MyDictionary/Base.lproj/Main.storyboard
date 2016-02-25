@@ -24,27 +24,17 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Word" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RP4-uv-vZs">
-                                            <rect key="frame" x="8" y="10" width="88" height="12"/>
+                                            <rect key="frame" x="8" y="10" width="61" height="12"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="88" id="lvr-wr-CG8"/>
+                                                <constraint firstAttribute="width" constant="61" id="lvr-wr-CG8"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                             <size key="shadowOffset" width="0.0" height="0.0"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="definition" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MAr-9S-nN9">
-                                            <rect key="frame" x="104" y="10" width="50" height="12"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="50" id="CFx-pl-BdA"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="9"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                            <size key="shadowOffset" width="0.0" height="0.0"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Type" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZTZ-2l-Kd8">
-                                            <rect key="frame" x="166" y="10" width="50" height="12"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="type" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZTZ-2l-Kd8">
+                                            <rect key="frame" x="140" y="10" width="50" height="12"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="50" id="udC-5Z-wKw"/>
                                             </constraints>
@@ -53,8 +43,18 @@
                                             <nil key="highlightedColor"/>
                                             <size key="shadowOffset" width="0.0" height="0.0"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="248" verticalHuggingPriority="251" text="Year" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="faO-pt-XcU">
-                                            <rect key="frame" x="227" y="10" width="50" height="12"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="country" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7jL-17-CE6">
+                                            <rect key="frame" x="259" y="10" width="50" height="12"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="50" id="10Y-XR-d1U"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                            <size key="shadowOffset" width="0.0" height="0.0"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="248" verticalHuggingPriority="251" text="year" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="faO-pt-XcU">
+                                            <rect key="frame" x="201" y="10" width="50" height="12"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="50" id="fNe-ow-mnR"/>
                                             </constraints>
@@ -63,10 +63,10 @@
                                             <nil key="highlightedColor"/>
                                             <size key="shadowOffset" width="0.0" height="0.0"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="country" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7jL-17-CE6">
-                                            <rect key="frame" x="285" y="10" width="50" height="12"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="definition" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MAr-9S-nN9">
+                                            <rect key="frame" x="78" y="10" width="50" height="12"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="50" id="10Y-XR-d1U"/>
+                                                <constraint firstAttribute="width" constant="50" id="CFx-pl-BdA"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="9"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -82,7 +82,7 @@
                                         <constraint firstItem="ZTZ-2l-Kd8" firstAttribute="firstBaseline" secondItem="MAr-9S-nN9" secondAttribute="firstBaseline" id="HUK-ls-HBc"/>
                                         <constraint firstItem="7jL-17-CE6" firstAttribute="firstBaseline" secondItem="faO-pt-XcU" secondAttribute="firstBaseline" id="NTr-cw-JCX"/>
                                         <constraint firstAttribute="leadingMargin" secondItem="RP4-uv-vZs" secondAttribute="leading" id="Tz5-g2-HRc"/>
-                                        <constraint firstItem="MAr-9S-nN9" firstAttribute="leading" secondItem="RP4-uv-vZs" secondAttribute="trailing" constant="8" id="WHw-rm-K9r"/>
+                                        <constraint firstItem="MAr-9S-nN9" firstAttribute="leading" secondItem="RP4-uv-vZs" secondAttribute="trailing" constant="9" id="WHw-rm-K9r"/>
                                         <constraint firstItem="ZTZ-2l-Kd8" firstAttribute="leading" secondItem="MAr-9S-nN9" secondAttribute="trailing" constant="12" id="ZEf-K6-dvW"/>
                                         <constraint firstItem="RP4-uv-vZs" firstAttribute="top" secondItem="MAr-9S-nN9" secondAttribute="top" id="gLG-Lv-1Kk"/>
                                         <constraint firstItem="RP4-uv-vZs" firstAttribute="baseline" secondItem="MAr-9S-nN9" secondAttribute="baseline" id="hE3-bw-bf0"/>
@@ -92,8 +92,11 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="countryLabel" destination="7jL-17-CE6" id="of1-uA-Zhb"/>
                                     <outlet property="definitionSmallLabel" destination="MAr-9S-nN9" id="LS0-ev-3ag"/>
+                                    <outlet property="typeLabel" destination="ZTZ-2l-Kd8" id="XOh-Fu-qlV"/>
                                     <outlet property="wordLabel" destination="RP4-uv-vZs" id="mfH-dn-inl"/>
+                                    <outlet property="yearLabel" destination="faO-pt-XcU" id="obQ-Yl-oFt"/>
                                     <segue destination="6J2-VM-JIo" kind="show" identifier="showDictionaryDetail" id="BFK-kX-m9f"/>
                                 </connections>
                             </tableViewCell>
@@ -148,7 +151,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="definition" destination="zr5-rn-uCY" id="bN9-Vl-wJf"/>
+                                            <outlet property="typeLabel" destination="zr5-rn-uCY" id="eYk-Gm-LQa"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

@@ -132,6 +132,11 @@ class DictionaryTableViewController: UITableViewController, NSFetchedResultsCont
         if let dictionary = itemForIndexPath(indexPath){
             cell.wordLabel.text = dictionary.word
             cell.definitionSmallLabel.text =  dictionary.definition
+            cell.typeLabel.text = dictionary.type
+            cell.yearLabel.text = dictionary.year
+            cell.countryLabel.text = dictionary.country
+            
+            
         }else{
             print("Cell error with path\(indexPath)")
         }

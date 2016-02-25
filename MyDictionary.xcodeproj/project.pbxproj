@@ -59,6 +59,9 @@
 		7879DCBD1C3BE32A00179C48 /* Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
 		7879DCC01C3BE41E00179C48 /* CockpitDictionary.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CockpitDictionary.xcdatamodel; sourceTree = "<group>"; };
 		9375AEAA1C7C8A320092E061 /* CarPart5column.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CarPart5column.csv; sourceTree = "<group>"; };
+		93B88A281C7E268C00823D85 /* CockpitDictionary.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = CockpitDictionary.sqlite; sourceTree = "<group>"; };
+		93B88A291C7E268C00823D85 /* CockpitDictionary.sqlite-shm */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CockpitDictionary.sqlite-shm"; sourceTree = "<group>"; };
+		93B88A2A1C7E268C00823D85 /* CockpitDictionary.sqlite-wal */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CockpitDictionary.sqlite-wal"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +118,9 @@
 				7879DCB91C3BE22200179C48 /* DictionaryDetailViewController.swift */,
 				7879DCBB1C3BE28000179C48 /* DictionaryDetailTableViewCell.swift */,
 				7879DC881C3BC9B800179C48 /* Main.storyboard */,
+				93B88A281C7E268C00823D85 /* CockpitDictionary.sqlite */,
+				93B88A291C7E268C00823D85 /* CockpitDictionary.sqlite-shm */,
+				93B88A2A1C7E268C00823D85 /* CockpitDictionary.sqlite-wal */,
 				7879DCBD1C3BE32A00179C48 /* Dictionary.swift */,
 				7879DC8E1C3BC9B800179C48 /* Assets.xcassets */,
 				7879DC901C3BC9B800179C48 /* LaunchScreen.storyboard */,
