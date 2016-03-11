@@ -187,3 +187,34 @@ class DictionaryTableViewController: UITableViewController, NSFetchedResultsCont
     }    
 }
 
+
+
+//ScopeBar: The line below is my try to insert a ScopeBar to filter the results:
+
+
+/*
+func filterContentForSearchText(searchText: String, scope: String = "All") {
+    dictionaryItems = cockpitDict.filter({( cockpitDict : Dictionary) -> Bool in
+        let categoryMatch = (scope == "All") || (cockpitDict.category == scope)
+        return categoryMatch && cockpitDict.name.lowercaseString.containsString(searchText.lowercaseString)
+    })
+    tableView.reloadData()
+}
+
+extension DictionaryTableViewController:UISearchBarDelegate {
+    // MARK: - UISearchBar Delegate
+    func searchBar(searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
+        filterContentForSearchText(searchBar.text!, scope: searchBar.scopeButtonTitles![selectedScope])
+    }
+}
+
+extension DictionaryTableViewController: UISearchResultsUpdating {
+    // MARK: - UISearchResultsUpdating Delegate
+    func updateSearchResultsForSearchController(searchController: UISearchController) {
+        let searchBar = searchController.searchBar
+        let scope = searchBar.scopeButtonTitles![searchBar.selectedScopeButtonIndex]
+        filterContentForSearchText(searchController.searchBar.text!, scope: scope)
+    }
+}
+*/
+
