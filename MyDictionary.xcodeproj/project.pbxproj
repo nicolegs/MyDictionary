@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		787663DD1C92AC76005EB7F3 /* CarPart5column.csv in Resources */ = {isa = PBXBuildFile; fileRef = 787663D91C92AC76005EB7F3 /* CarPart5column.csv */; };
+		787663DE1C92AC76005EB7F3 /* CockpitDictionary.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 787663DA1C92AC76005EB7F3 /* CockpitDictionary.sqlite */; };
+		787663DF1C92AC76005EB7F3 /* CockpitDictionary.sqlite-shm in Resources */ = {isa = PBXBuildFile; fileRef = 787663DB1C92AC76005EB7F3 /* CockpitDictionary.sqlite-shm */; };
+		787663E01C92AC76005EB7F3 /* CockpitDictionary.sqlite-wal in Resources */ = {isa = PBXBuildFile; fileRef = 787663DC1C92AC76005EB7F3 /* CockpitDictionary.sqlite-wal */; };
 		7879DC851C3BC9B800179C48 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7879DC841C3BC9B800179C48 /* AppDelegate.swift */; };
 		7879DC8A1C3BC9B800179C48 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7879DC881C3BC9B800179C48 /* Main.storyboard */; };
 		7879DC8F1C3BC9B800179C48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7879DC8E1C3BC9B800179C48 /* Assets.xcassets */; };
@@ -19,7 +23,6 @@
 		7879DCBC1C3BE28000179C48 /* DictionaryDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7879DCBB1C3BE28000179C48 /* DictionaryDetailTableViewCell.swift */; };
 		7879DCBE1C3BE32A00179C48 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7879DCBD1C3BE32A00179C48 /* Dictionary.swift */; };
 		7879DCC11C3BE41E00179C48 /* CockpitDictionary.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7879DCBF1C3BE41E00179C48 /* CockpitDictionary.xcdatamodeld */; };
-		9375AEAB1C7C8A320092E061 /* CarPart5column.csv in Resources */ = {isa = PBXBuildFile; fileRef = 9375AEAA1C7C8A320092E061 /* CarPart5column.csv */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +43,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		787663D91C92AC76005EB7F3 /* CarPart5column.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CarPart5column.csv; sourceTree = "<group>"; };
+		787663DA1C92AC76005EB7F3 /* CockpitDictionary.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = CockpitDictionary.sqlite; sourceTree = "<group>"; };
+		787663DB1C92AC76005EB7F3 /* CockpitDictionary.sqlite-shm */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CockpitDictionary.sqlite-shm"; sourceTree = "<group>"; };
+		787663DC1C92AC76005EB7F3 /* CockpitDictionary.sqlite-wal */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CockpitDictionary.sqlite-wal"; sourceTree = "<group>"; };
 		7879DC811C3BC9B800179C48 /* MyDictionary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyDictionary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7879DC841C3BC9B800179C48 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7879DC891C3BC9B800179C48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -58,10 +65,6 @@
 		7879DCBB1C3BE28000179C48 /* DictionaryDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryDetailTableViewCell.swift; sourceTree = "<group>"; };
 		7879DCBD1C3BE32A00179C48 /* Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
 		7879DCC01C3BE41E00179C48 /* CockpitDictionary.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CockpitDictionary.xcdatamodel; sourceTree = "<group>"; };
-		9375AEAA1C7C8A320092E061 /* CarPart5column.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CarPart5column.csv; sourceTree = "<group>"; };
-		93B88A281C7E268C00823D85 /* CockpitDictionary.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = CockpitDictionary.sqlite; sourceTree = "<group>"; };
-		93B88A291C7E268C00823D85 /* CockpitDictionary.sqlite-shm */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CockpitDictionary.sqlite-shm"; sourceTree = "<group>"; };
-		93B88A2A1C7E268C00823D85 /* CockpitDictionary.sqlite-wal */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CockpitDictionary.sqlite-wal"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,14 +121,14 @@
 				7879DCB91C3BE22200179C48 /* DictionaryDetailViewController.swift */,
 				7879DCBB1C3BE28000179C48 /* DictionaryDetailTableViewCell.swift */,
 				7879DC881C3BC9B800179C48 /* Main.storyboard */,
-				93B88A281C7E268C00823D85 /* CockpitDictionary.sqlite */,
-				93B88A291C7E268C00823D85 /* CockpitDictionary.sqlite-shm */,
-				93B88A2A1C7E268C00823D85 /* CockpitDictionary.sqlite-wal */,
 				7879DCBD1C3BE32A00179C48 /* Dictionary.swift */,
 				7879DC8E1C3BC9B800179C48 /* Assets.xcassets */,
 				7879DC901C3BC9B800179C48 /* LaunchScreen.storyboard */,
+				787663D91C92AC76005EB7F3 /* CarPart5column.csv */,
+				787663DA1C92AC76005EB7F3 /* CockpitDictionary.sqlite */,
+				787663DB1C92AC76005EB7F3 /* CockpitDictionary.sqlite-shm */,
+				787663DC1C92AC76005EB7F3 /* CockpitDictionary.sqlite-wal */,
 				7879DC931C3BC9B800179C48 /* Info.plist */,
-				9375AEAA1C7C8A320092E061 /* CarPart5column.csv */,
 				7879DCBF1C3BE41E00179C48 /* CockpitDictionary.xcdatamodeld */,
 			);
 			path = MyDictionary;
@@ -217,7 +220,7 @@
 				TargetAttributes = {
 					7879DC801C3BC9B800179C48 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = 8S5WCUB238;
+						DevelopmentTeam = 632R8B45S9;
 					};
 					7879DC971C3BC9B800179C48 = {
 						CreatedOnToolsVersion = 7.2;
@@ -256,10 +259,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9375AEAB1C7C8A320092E061 /* CarPart5column.csv in Resources */,
+				787663DD1C92AC76005EB7F3 /* CarPart5column.csv in Resources */,
 				7879DC921C3BC9B800179C48 /* LaunchScreen.storyboard in Resources */,
+				787663DF1C92AC76005EB7F3 /* CockpitDictionary.sqlite-shm in Resources */,
+				787663DE1C92AC76005EB7F3 /* CockpitDictionary.sqlite in Resources */,
 				7879DC8F1C3BC9B800179C48 /* Assets.xcassets in Resources */,
 				7879DC8A1C3BC9B800179C48 /* Main.storyboard in Resources */,
+				787663E01C92AC76005EB7F3 /* CockpitDictionary.sqlite-wal in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
